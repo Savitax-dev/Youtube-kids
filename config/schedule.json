@@ -1,0 +1,119 @@
+[
+  {
+    "day": 1,
+    "date_offset": 0,
+    "theme": "Con vật - Ra mắt kênh",
+    "videos": [
+      {
+        "slot": "slot1", "channel": "vn",
+        "filename": "ngay1_bat_hat_con_vat_vn.mp4",
+        "title": "Bài Hát Con Vật Đáng Yêu 🐶🐱🐔 | Nhạc Thiếu Nhi Vui Nhộn",
+        "description": "Cùng hát bài hát về các con vật đáng yêu nào! Chó, mèo, gà, vịt... tất cả đều có trong video này!\n\n✨ Phù hợp cho bé từ 2-8 tuổi\n🎵 Giai điệu vui nhộn dễ nhớ\n🌈 Hoạt hình màu sắc rực rỡ\n\n👍 Like và SUBSCRIBE để xem thêm nhiều video bổ ích!\n🔔 Bật thông báo để không bỏ lỡ video mới!\n\n#thiếunhi #bàihátthi#unhi #conváts #hoạthình #nhạcthiếunhi",
+        "tags": ["bài hát con vật", "thiếu nhi", "nhạc thiếu nhi", "con vật đáng yêu", "hoạt hình thiếu nhi", "bé học con vật"],
+        "thumbnail": "thumbnails/ngay1_thumb1.jpg"
+      },
+      {
+        "slot": "slot2", "channel": "en",
+        "filename": "ngay1_animals_song_en.mp4",
+        "title": "Animals Song for Kids 🐶🐱🐔 | Fun Nursery Rhymes | Kids Animation",
+        "description": "Let's sing and learn about animals together! Dogs, cats, chickens and more!\n\n✨ Perfect for children ages 2-8\n🎵 Catchy melody kids love\n🌈 Bright colorful animation\n\n👍 Like and SUBSCRIBE for more fun videos!\n🔔 Turn on notifications!\n\n#kidssongs #nurseryrhymes #animalsong #kidsanimation #childrenssongs",
+        "tags": ["animals song", "kids songs", "nursery rhymes", "children animation", "learn animals", "toddler songs"],
+        "thumbnail": "thumbnails/ngay1_thumb2.jpg"
+      },
+      {
+        "slot": "slot3", "channel": "vn",
+        "filename": "ngay1_truyen_chu_tho_trang_vn.mp4",
+        "title": "Truyện Cổ Tích: Chú Thỏ Trắng Tốt Bụng 🐰 | Hoạt Hình Thiếu Nhi",
+        "description": "Câu chuyện về chú thỏ trắng dễ thương và bài học về lòng tốt và sự chia sẻ.\n\n📖 Truyện cổ tích hay cho bé\n🎭 Nhân vật hoạt hình đáng yêu\n💝 Bài học ý nghĩa về tình bạn\n\n👍 SUBSCRIBE để xem thêm truyện cổ tích mỗi ngày!\n\n#truyệncổtích #hoạthìnhthiếunhi #chúthỏtrắng #truyệnthiếunhi",
+        "tags": ["truyện cổ tích", "hoạt hình thiếu nhi", "chú thỏ trắng", "truyện thiếu nhi", "cổ tích việt nam"],
+        "thumbnail": "thumbnails/ngay1_thumb3.jpg"
+      },
+      {
+        "slot": "slot4", "channel": "en",
+        "filename": "ngay1_goodnight_lullaby_en.mp4",
+        "title": "Goodnight Little Star 🌟 | Bedtime Lullaby for Kids | Sleep Music",
+        "description": "Gentle lullabies to help your little ones drift off to sleep peacefully.\n\n🌙 Perfect for bedtime routine\n⭐ Soft dreamy animation\n😴 Helps children relax and sleep\n\nPlaylist: Bedtime Lullabies for Kids\n\n#lullaby #bedtimesong #kidsleepmusic #goodnight #babylullaby",
+        "tags": ["lullaby", "bedtime songs", "kids sleep music", "nursery rhymes", "goodnight song", "baby lullaby"],
+        "thumbnail": "thumbnails/ngay1_thumb4.jpg"
+      }
+    ]
+  },
+  {
+    "day": 2,
+    "date_offset": 1,
+    "theme": "Số đếm vui nhộn",
+    "videos": [
+      {
+        "slot": "slot1", "channel": "vn",
+        "filename": "ngay2_dem_so_1_10_vn.mp4",
+        "title": "Bé Học Đếm Số Từ 1 Đến 10 🔢 | Bài Hát Số Đếm Vui Nhộn | Thiếu Nhi",
+        "description": "Cùng hát và học đếm số từ 1 đến 10 với hoạt hình màu sắc rực rỡ!\n\n🔢 Học đếm số vui và dễ nhớ\n🎨 Hình ảnh sinh động minh họa từng số\n🎵 Giai điệu bắt tai\n\n#họcđếmsố #sốđếm #thiếunhi #bàihátthiếunhi",
+        "tags": ["học đếm số", "số đếm 1 đến 10", "thiếu nhi", "bài hát thiếu nhi", "toán cho bé"],
+        "thumbnail": "thumbnails/ngay2_thumb1.jpg"
+      },
+      {
+        "slot": "slot2", "channel": "en",
+        "filename": "ngay2_count_1_20_en.mp4",
+        "title": "Count 1 to 20 🔢 | Number Song for Kids | Learn Numbers Animation",
+        "description": "Fun number song to help kids learn to count from 1 to 20!\n\n🔢 Visual counting with colorful objects\n🎵 Catchy rhythm children love\n📚 Educational content for preschoolers\n\n#numbersong #learntoncount #kidsmath #preschool #educationalkids",
+        "tags": ["number song", "learn to count", "kids math", "preschool", "counting for kids", "educational animation"],
+        "thumbnail": "thumbnails/ngay2_thumb2.jpg"
+      },
+      {
+        "slot": "slot3", "channel": "vn",
+        "filename": "ngay2_ba_con_lon_vn.mp4",
+        "title": "Cổ Tích: Ba Con Lợn Nhỏ 🐷🐷🐷 | Hoạt Hình Việt Nam | Bé Học Siêng Năng",
+        "description": "Câu chuyện ba con lợn nhỏ xây nhà và bài học về sự siêng năng cần cù.\n\n📖 Truyện cổ tích nổi tiếng thế giới\n🐷 Nhân vật hoạt hình dễ thương\n💪 Bài học về sự chăm chỉ\n\n#truyệncổtích #baconlợnnhỏ #hoạthình #thiếunhi",
+        "tags": ["ba con lợn", "truyện cổ tích", "hoạt hình thiếu nhi", "bài học siêng năng"],
+        "thumbnail": "thumbnails/ngay2_thumb3.jpg"
+      },
+      {
+        "slot": "slot4", "channel": "en",
+        "filename": "ngay2_twinkle_lullaby_en.mp4",
+        "title": "Twinkle Twinkle Little Star ⭐ | Classic Nursery Rhyme | Bedtime Lullaby",
+        "description": "The classic Twinkle Twinkle Little Star nursery rhyme with dreamy animation.\n\n⭐ Classic nursery rhyme children love\n🌙 Perfect for bedtime\n✨ Beautiful dreamy visuals\n\n#twinkletwinkle #nurseryrhymes #lullaby #bedtime #kidsclassics",
+        "tags": ["twinkle twinkle little star", "nursery rhymes", "lullaby", "bedtime songs", "classic kids songs"],
+        "thumbnail": "thumbnails/ngay2_thumb4.jpg"
+      }
+    ]
+  },
+  {
+    "day": 3,
+    "date_offset": 2,
+    "theme": "Màu sắc cầu vồng",
+    "videos": [
+      {
+        "slot": "slot1", "channel": "vn",
+        "filename": "ngay3_mau_sac_cau_vong_vn.mp4",
+        "title": "Bài Hát Màu Sắc Cầu Vồng 🌈 | Bé Học Màu Sắc | Nhạc Thiếu Nhi Hay Nhất",
+        "description": "Hãy cùng học 7 màu cầu vồng qua bài hát vui nhộn nhé!\n\n🌈 Học 7 màu sắc cầu vồng\n🎨 Hình ảnh màu sắc rực rỡ\n🎵 Giai điệu dễ nhớ và vui tươi\n\n#màusắc #cầuvồng #thiếunhi #bàihátthiếunhi #họcmàusắc",
+        "tags": ["màu sắc", "cầu vồng", "học màu sắc", "thiếu nhi", "bài hát thiếu nhi"],
+        "thumbnail": "thumbnails/ngay3_thumb1.jpg"
+      },
+      {
+        "slot": "slot2", "channel": "en",
+        "filename": "ngay3_colors_rainbow_en.mp4",
+        "title": "Colors of the Rainbow 🌈 | Learn Colors Song | Kids Educational Animation",
+        "description": "Learn all the colors of the rainbow with this fun and colorful song!\n\n🌈 Learn 7 rainbow colors\n🎨 Bright colorful visuals\n📚 Educational for preschoolers\n\n#colorsong #learncolors #rainbowcolors #kidseducation #preschoolsongs",
+        "tags": ["learn colors", "color song", "rainbow colors", "kids education", "preschool animation"],
+        "thumbnail": "thumbnails/ngay3_thumb2.jpg"
+      },
+      {
+        "slot": "slot3", "channel": "vn",
+        "filename": "ngay3_be_hoc_ve_mau_sac_vn.mp4",
+        "title": "Bé Tập Tô Màu Cùng Hoạt Hình 🎨 | Học Màu Sắc Qua Vẽ Tranh | Thiếu Nhi",
+        "description": "Hướng dẫn bé tập tô màu và nhận biết màu sắc qua hoạt hình sinh động!\n\n🎨 Học màu sắc qua tô màu\n✏️ Kỹ năng sáng tạo cho bé\n🌈 Nhận biết và phân biệt màu sắc\n\n#tômàu #sángtạo #thiếunhi #họcmàusắc",
+        "tags": ["tô màu", "học màu sắc", "sáng tạo", "thiếu nhi", "kỹ năng cho bé"],
+        "thumbnail": "thumbnails/ngay3_thumb3.jpg"
+      },
+      {
+        "slot": "slot4", "channel": "en",
+        "filename": "ngay3_rainbow_lullaby_en.mp4",
+        "title": "Rainbow Lullaby 🌈 | Colorful Bedtime Song | Sleep Music for Kids",
+        "description": "Drift off to sleep with this beautiful rainbow-themed lullaby.\n\n🌈 Soft rainbow colors animation\n🌙 Perfect bedtime song\n😴 Helps children relax\n\n#rainbowlullaby #bedtimesong #kidsleepmusic #colorful #sleepsong",
+        "tags": ["rainbow lullaby", "bedtime songs", "sleep music kids", "colorful animation", "gentle kids songs"],
+        "thumbnail": "thumbnails/ngay3_thumb4.jpg"
+      }
+    ]
+  }
+]

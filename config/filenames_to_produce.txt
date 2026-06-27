@@ -1,0 +1,183 @@
+# Danh sách TẤT CẢ file video cần sản xuất
+# Đặt vào thư mục: videos_queue/vn/ hoặc videos_queue/en/
+
+# === Ngày 1: Con vật ===
+videos_queue/vn/ngay01_slot1_vn.mp4
+videos_queue/en/ngay01_slot2_en.mp4
+videos_queue/vn/ngay01_slot3_vn.mp4
+videos_queue/en/ngay01_slot4_en.mp4
+
+# === Ngày 2: Số đếm ===
+videos_queue/vn/ngay02_slot1_vn.mp4
+videos_queue/en/ngay02_slot2_en.mp4
+videos_queue/vn/ngay02_slot3_vn.mp4
+videos_queue/en/ngay02_slot4_en.mp4
+
+# === Ngày 3: Màu sắc ===
+videos_queue/vn/ngay03_slot1_vn.mp4
+videos_queue/en/ngay03_slot2_en.mp4
+videos_queue/vn/ngay03_slot3_vn.mp4
+videos_queue/en/ngay03_slot4_en.mp4
+
+# === Ngày 4: Vệ sinh ===
+videos_queue/vn/ngay04_slot1_vn.mp4
+videos_queue/en/ngay04_slot2_en.mp4
+videos_queue/vn/ngay04_slot3_vn.mp4
+videos_queue/en/ngay04_slot4_en.mp4
+
+# === Ngày 5: Bảng chữ cái ===
+videos_queue/vn/ngay05_slot1_vn.mp4
+videos_queue/en/ngay05_slot2_en.mp4
+videos_queue/vn/ngay05_slot3_vn.mp4
+videos_queue/en/ngay05_slot4_en.mp4
+
+# === Ngày 6: Xe cộ ===
+videos_queue/vn/ngay06_slot1_vn.mp4
+videos_queue/en/ngay06_slot2_en.mp4
+videos_queue/vn/ngay06_slot3_vn.mp4
+videos_queue/en/ngay06_slot4_en.mp4
+
+# === Ngày 7: Tổng kết tuần 1 ===
+videos_queue/vn/ngay07_slot1_vn.mp4
+videos_queue/en/ngay07_slot2_en.mp4
+videos_queue/vn/ngay07_slot3_vn.mp4
+videos_queue/en/ngay07_slot4_en.mp4
+
+# === Ngày 8: Buổi sáng ===
+videos_queue/vn/ngay08_slot1_vn.mp4
+videos_queue/en/ngay08_slot2_en.mp4
+videos_queue/vn/ngay08_slot3_vn.mp4
+videos_queue/en/ngay08_slot4_en.mp4
+
+# === Ngày 9: Rau củ quả ===
+videos_queue/vn/ngay09_slot1_vn.mp4
+videos_queue/en/ngay09_slot2_en.mp4
+videos_queue/vn/ngay09_slot3_vn.mp4
+videos_queue/en/ngay09_slot4_en.mp4
+
+# === Ngày 10: Trường học ===
+videos_queue/vn/ngay10_slot1_vn.mp4
+videos_queue/en/ngay10_slot2_en.mp4
+videos_queue/vn/ngay10_slot3_vn.mp4
+videos_queue/en/ngay10_slot4_en.mp4
+
+# === Ngày 11: Hình học ===
+videos_queue/vn/ngay11_slot1_vn.mp4
+videos_queue/en/ngay11_slot2_en.mp4
+videos_queue/vn/ngay11_slot3_vn.mp4
+videos_queue/en/ngay11_slot4_en.mp4
+
+# === Ngày 12: Thời tiết ===
+videos_queue/vn/ngay12_slot1_vn.mp4
+videos_queue/en/ngay12_slot2_en.mp4
+videos_queue/vn/ngay12_slot3_vn.mp4
+videos_queue/en/ngay12_slot4_en.mp4
+
+# === Ngày 13: Gia đình ===
+videos_queue/vn/ngay13_slot1_vn.mp4
+videos_queue/en/ngay13_slot2_en.mp4
+videos_queue/vn/ngay13_slot3_vn.mp4
+videos_queue/en/ngay13_slot4_en.mp4
+
+# === Ngày 14: Tổng kết tuần 2 ===
+videos_queue/vn/ngay14_slot1_vn.mp4
+videos_queue/en/ngay14_slot2_en.mp4
+videos_queue/vn/ngay14_slot3_vn.mp4
+videos_queue/en/ngay14_slot4_en.mp4
+
+# === Ngày 15: Safari ===
+videos_queue/vn/ngay15_slot1_vn.mp4
+videos_queue/en/ngay15_slot2_en.mp4
+videos_queue/vn/ngay15_slot3_vn.mp4
+videos_queue/en/ngay15_slot4_en.mp4
+
+# === Ngày 16: Vận động ===
+videos_queue/vn/ngay16_slot1_vn.mp4
+videos_queue/en/ngay16_slot2_en.mp4
+videos_queue/vn/ngay16_slot3_vn.mp4
+videos_queue/en/ngay16_slot4_en.mp4
+
+# === Ngày 17: Nghệ thuật ===
+videos_queue/vn/ngay17_slot1_vn.mp4
+videos_queue/en/ngay17_slot2_en.mp4
+videos_queue/vn/ngay17_slot3_vn.mp4
+videos_queue/en/ngay17_slot4_en.mp4
+
+# === Ngày 18: Đại dương ===
+videos_queue/vn/ngay18_slot1_vn.mp4
+videos_queue/en/ngay18_slot2_en.mp4
+videos_queue/vn/ngay18_slot3_vn.mp4
+videos_queue/en/ngay18_slot4_en.mp4
+
+# === Ngày 19: Vũ trụ ===
+videos_queue/vn/ngay19_slot1_vn.mp4
+videos_queue/en/ngay19_slot2_en.mp4
+videos_queue/vn/ngay19_slot3_vn.mp4
+videos_queue/en/ngay19_slot4_en.mp4
+
+# === Ngày 20: Nghề nghiệp ===
+videos_queue/vn/ngay20_slot1_vn.mp4
+videos_queue/en/ngay20_slot2_en.mp4
+videos_queue/vn/ngay20_slot3_vn.mp4
+videos_queue/en/ngay20_slot4_en.mp4
+
+# === Ngày 21: 1 giờ đặc biệt ===
+videos_queue/vn/ngay21_slot1_vn.mp4
+videos_queue/en/ngay21_slot2_en.mp4
+videos_queue/vn/ngay21_slot3_vn.mp4
+videos_queue/en/ngay21_slot4_en.mp4
+
+# === Ngày 22: Trung Thu ===
+videos_queue/vn/ngay22_slot1_vn.mp4
+videos_queue/en/ngay22_slot2_en.mp4
+videos_queue/vn/ngay22_slot3_vn.mp4
+videos_queue/en/ngay22_slot4_en.mp4
+
+# === Ngày 23: Mùa hè ===
+videos_queue/vn/ngay23_slot1_vn.mp4
+videos_queue/en/ngay23_slot2_en.mp4
+videos_queue/vn/ngay23_slot3_vn.mp4
+videos_queue/en/ngay23_slot4_en.mp4
+
+# === Ngày 24: Côn trùng ===
+videos_queue/vn/ngay24_slot1_vn.mp4
+videos_queue/en/ngay24_slot2_en.mp4
+videos_queue/vn/ngay24_slot3_vn.mp4
+videos_queue/en/ngay24_slot4_en.mp4
+
+# === Ngày 25: An toàn ===
+videos_queue/vn/ngay25_slot1_vn.mp4
+videos_queue/en/ngay25_slot2_en.mp4
+videos_queue/vn/ngay25_slot3_vn.mp4
+videos_queue/en/ngay25_slot4_en.mp4
+
+# === Ngày 26: Câu đố ===
+videos_queue/vn/ngay26_slot1_vn.mp4
+videos_queue/en/ngay26_slot2_en.mp4
+videos_queue/vn/ngay26_slot3_vn.mp4
+videos_queue/en/ngay26_slot4_en.mp4
+
+# === Ngày 27: Challenge ===
+videos_queue/vn/ngay27_slot1_vn.mp4
+videos_queue/en/ngay27_slot2_en.mp4
+videos_queue/vn/ngay27_slot3_vn.mp4
+videos_queue/en/ngay27_slot4_en.mp4
+
+# === Ngày 28: Âm nhạc ===
+videos_queue/vn/ngay28_slot1_vn.mp4
+videos_queue/en/ngay28_slot2_en.mp4
+videos_queue/vn/ngay28_slot3_vn.mp4
+videos_queue/en/ngay28_slot4_en.mp4
+
+# === Ngày 29: Karaoke ===
+videos_queue/vn/ngay29_slot1_vn.mp4
+videos_queue/en/ngay29_slot2_en.mp4
+videos_queue/vn/ngay29_slot3_vn.mp4
+videos_queue/en/ngay29_slot4_en.mp4
+
+# === Ngày 30: Tổng kết 30 ngày ===
+videos_queue/vn/ngay30_slot1_vn.mp4
+videos_queue/en/ngay30_slot2_en.mp4
+videos_queue/vn/ngay30_slot3_vn.mp4
+videos_queue/en/ngay30_slot4_en.mp4
+

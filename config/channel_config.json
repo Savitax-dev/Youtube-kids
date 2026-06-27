@@ -1,0 +1,27 @@
+{
+  "channels": {
+    "vn": {
+      "name": "Kênh thiếu nhi VN",
+      "language": "vi",
+      "default_tags": ["thiếu nhi", "bài hát thiếu nhi", "hoạt hình", "nhạc thiếu nhi", "truyện cổ tích", "học mà chơi"],
+      "default_category": "26",
+      "made_for_kids": true,
+      "default_privacy": "private"
+    },
+    "en": {
+      "name": "Kids Channel EN",
+      "language": "en",
+      "default_tags": ["kids songs", "nursery rhymes", "children animation", "kids cartoon", "educational kids", "toddler songs"],
+      "default_category": "26",
+      "made_for_kids": true,
+      "default_privacy": "private"
+    }
+  },
+  "upload_times": {
+    "slot1": "06:30",
+    "slot2": "11:30",
+    "slot3": "16:30",
+    "slot4": "20:00"
+  },
+  "timezone": "Asia/Ho_Chi_Minh"
+}

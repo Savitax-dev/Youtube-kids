@@ -1,0 +1,7 @@
+token.pickle
+*.pickle
+__pycache__/
+*.pyc
+videos_queue/
+.env
+credentials.json

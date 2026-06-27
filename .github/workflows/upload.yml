@@ -1,0 +1,237 @@
+# ============================================================
+# YouTube Kids Channel — Tự động đăng video không cần máy tính
+# Chạy trên GitHub Actions (miễn phí, không cần server)
+#
+# CÁCH SETUP:
+# 1. Push toàn bộ thư mục youtube-auto/ lên GitHub (repo private)
+# 2. Settings → Secrets and variables → Actions → New secret:
+#    - YOUTUBE_TOKEN_B64  ← base64 của file config/token.pickle
+#    - GDRIVE_FOLDER_VN   ← Google Drive folder ID chứa video VN
+#    - GDRIVE_FOLDER_EN   ← Google Drive folder ID chứa video EN
+# 3. Workflow này sẽ tự chạy đúng giờ mỗi ngày
+# ============================================================
+
+name: YouTube Auto Upload — Kids Channel
+
+on:
+  # ── Lịch cố định (giờ VN = UTC+7, nên trừ 7 giờ) ──────────
+  schedule:
+    - cron: '30 23 * * *'   # 06:30 VN  (23:30 UTC hôm trước)
+    - cron: '30 4  * * *'   # 11:30 VN  (04:30 UTC)
+    - cron: '30 9  * * *'   # 16:30 VN  (09:30 UTC)
+    - cron: '0  13 * * *'   # 20:00 VN  (13:00 UTC)
+
+  # ── Chạy thủ công từ GitHub UI (để test) ───────────────────
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: 'Slot cần đăng (slot1/slot2/slot3/slot4)'
+        required: false
+        default: 'slot1'
+      dry_run:
+        description: 'Dry run (true = không upload thực)'
+        required: false
+        default: 'false'
+
+jobs:
+  upload:
+    name: Upload video theo slot
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      # ── 1. Lấy code từ repo ──────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. Cài Python ────────────────────────────────────────
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # ── 3. Cài thư viện ──────────────────────────────────────
+      - name: Install dependencies
+        run: |
+          pip install \
+            google-api-python-client \
+            google-auth-httplib2 \
+            google-auth-oauthlib \
+            gdown \
+            pytz \
+            Pillow
+
+      # ── 4. Khôi phục token OAuth từ Secret ───────────────────
+      - name: Restore YouTube OAuth token
+        env:
+          YOUTUBE_TOKEN_B64: ${{ secrets.YOUTUBE_TOKEN_B64 }}
+        run: |
+          mkdir -p config
+          echo "$YOUTUBE_TOKEN_B64" | base64 -d > config/token.pickle
+          echo "✅ Token restored"
+
+      # ── 5. Xác định slot hiện tại (theo giờ UTC) ─────────────
+      - name: Determine current slot
+        id: slot
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # Chạy thủ công → dùng input
+            SLOT="${{ github.event.inputs.slot }}"
+          else
+            # Chạy tự động → xác định theo giờ UTC
+            HOUR=$(date -u +%H)
+            MINUTE=$(date -u +%M)
+            if [ "$HOUR" = "23" ] && [ "$MINUTE" -ge "30" ]; then
+              SLOT="slot1"   # 06:30 VN
+            elif [ "$HOUR" = "04" ]; then
+              SLOT="slot2"   # 11:30 VN
+            elif [ "$HOUR" = "09" ]; then
+              SLOT="slot3"   # 16:30 VN
+            elif [ "$HOUR" = "13" ]; then
+              SLOT="slot4"   # 20:00 VN
+            else
+              SLOT="slot1"   # Fallback
+            fi
+          fi
+          echo "slot=$SLOT" >> $GITHUB_OUTPUT
+          echo "▶ Slot: $SLOT"
+
+      # ── 6. Tải video từ Google Drive về runner ────────────────
+      - name: Download videos from Google Drive
+        env:
+          GDRIVE_FOLDER_VN: ${{ secrets.GDRIVE_FOLDER_VN }}
+          GDRIVE_FOLDER_EN: ${{ secrets.GDRIVE_FOLDER_EN }}
+        run: |
+          mkdir -p videos_queue/vn videos_queue/en
+
+          # Tính ngày hiện tại trong lịch 30 ngày
+          python3 - <<'EOF'
+          import json, os
+          from datetime import datetime, date
+          from pathlib import Path
+          import pytz
+
+          tz = pytz.timezone("Asia/Ho_Chi_Minh")
+          today = datetime.now(tz).date()
+
+          launch_file = Path("config/launch_date.txt")
+          if launch_file.exists():
+              launch = date.fromisoformat(launch_file.read_text().strip())
+          else:
+              launch = today
+              launch_file.write_text(str(today))
+
+          day_num = min((today - launch).days + 1, 30)
+          print(f"📅 Ngày {day_num} trong lịch")
+
+          with open("config/schedule_full_30days.json") as f:
+              schedule = json.load(f)
+
+          slot = os.environ.get("CURRENT_SLOT", "slot1")
+          today_data = next((d for d in schedule if d["day"] == day_num), None)
+          if not today_data:
+              print("⚠️ Không tìm thấy lịch cho ngày này")
+              exit(0)
+
+          files_needed = []
+          for video in today_data["videos"]:
+              if video["slot"] == slot:
+                  files_needed.append({
+                      "filename": video["filename"],
+                      "channel": video["channel"]
+                  })
+
+          with open("/tmp/files_to_download.json", "w") as f:
+              json.dump({"day": day_num, "files": files_needed}, f)
+
+          print(f"📥 Cần tải {len(files_needed)} file cho slot {slot}")
+          for f in files_needed:
+              print(f"   - {f['channel']}/{f['filename']}")
+          EOF
+          
+          echo "CURRENT_SLOT=${{ steps.slot.outputs.slot }}" >> $GITHUB_ENV
+
+          # Tải file từ Google Drive
+          python3 - <<'PYEOF'
+          import json, os, subprocess
+          from pathlib import Path
+
+          with open("/tmp/files_to_download.json") as f:
+              data = json.load(f)
+
+          folder_map = {
+              "vn": os.environ.get("GDRIVE_FOLDER_VN", ""),
+              "en": os.environ.get("GDRIVE_FOLDER_EN", ""),
+          }
+
+          for item in data["files"]:
+              ch = item["channel"]
+              fname = item["filename"]
+              out_path = f"videos_queue/{ch}/{fname}"
+
+              if Path(out_path).exists():
+                  print(f"✅ Đã có: {out_path}")
+                  continue
+
+              folder_id = folder_map.get(ch, "")
+              if not folder_id:
+                  print(f"⚠️ Chưa cấu hình GDRIVE_FOLDER_{ch.upper()}")
+                  continue
+
+              print(f"📥 Đang tải: {fname} từ Google Drive ({ch})...")
+              try:
+                  subprocess.run([
+                      "gdown", "--folder", folder_id,
+                      "--output", f"videos_queue/{ch}/",
+                      "--fuzzy"
+                  ], check=True, timeout=300)
+                  print(f"✅ Đã tải: {fname}")
+              except Exception as e:
+                  print(f"❌ Lỗi tải {fname}: {e}")
+          PYEOF
+
+      # ── 7. Chạy upload ────────────────────────────────────────
+      - name: Run uploader
+        env:
+          CURRENT_SLOT: ${{ steps.slot.outputs.slot }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+        run: |
+          python3 - <<'EOF'
+          import os, sys
+          sys.path.insert(0, ".")
+
+          slot = os.environ.get("CURRENT_SLOT", "slot1")
+          dry_run = os.environ.get("DRY_RUN", "false").lower() == "true"
+
+          if dry_run:
+              print("🔍 DRY RUN — không upload thực")
+
+          from scheduler.scheduler import run_upload_for_slot, get_today_day_number
+          print(f"▶ Đăng slot {slot} — Ngày {get_today_day_number()}")
+          run_upload_for_slot(slot)
+          EOF
+
+      # ── 8. Upload lịch sử vào artifact để theo dõi ───────────
+      - name: Save upload history
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: upload-history-${{ github.run_number }}
+          path: |
+            upload_history.json
+            upload_log.txt
+          retention-days: 30
+
+      # ── 9. Thông báo kết quả (tùy chọn) ──────────────────────
+      - name: Report status
+        if: always()
+        run: |
+          echo "============================================"
+          echo "✅ Upload hoàn tất cho slot: ${{ steps.slot.outputs.slot }}"
+          echo "   Ngày: $(date '+%d/%m/%Y %H:%M') (UTC)"
+          echo "   Run: ${{ github.run_number }}"
+          if [ -f upload_history.json ]; then
+            echo "   Tổng video đã đăng: $(python3 -c "import json; d=json.load(open('upload_history.json')); print(len(d))")"
+          fi
+          echo "============================================"

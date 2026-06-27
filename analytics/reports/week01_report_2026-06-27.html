@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Báo Cáo Tuần 1 — YouTube Kids Channel</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0 }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8fafc; color: #1e293b; }
+  .page { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .header { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; }
+  .header h1 { font-size: 24px; margin-bottom: 6px; }
+  .header p { opacity: .85; font-size: 14px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
+  .kpi { background: white; border-radius: 12px; padding: 1rem 1.1rem; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  .kpi-val { font-size: 26px; font-weight: 700; color: #6366f1; }
+  .kpi-lbl { font-size: 12px; color: #64748b; margin-top: 3px; }
+  .kpi-sub { font-size: 11px; color: #94a3b8; margin-top: 2px; }
+  .card { background: white; border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,.06); margin-bottom: 1.2rem; }
+  .card h2 { font-size: 16px; font-weight: 600; margin-bottom: 1rem; color: #1e293b; }
+  .chart-wrap { position: relative; height: 220px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; padding: 8px 10px; background: #f8fafc; color: #64748b; font-weight: 500; font-size: 12px; border-bottom: 1px solid #e2e8f0; }
+  td { padding: 8px 10px; border-bottom: 1px solid #f1f5f9; color: #374151; }
+  tr:last-child td { border-bottom: none; }
+  .badge-vn { background: #fef2f2; color: #dc2626; font-size: 10px; padding: 1px 6px; border-radius: 4px; font-weight: 500; }
+  .badge-en { background: #eff6ff; color: #2563eb; font-size: 10px; padding: 1px 6px; border-radius: 4px; font-weight: 500; }
+  ul { padding-left: 0; list-style: none; }
+  .insight-list li { display: flex; gap: 8px; }
+  .footer { text-align: center; font-size: 12px; color: #94a3b8; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; }
+  @media print { body { background: white } .page { padding: 0 } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <h1>📊 Báo Cáo Tuần 1</h1>
+    <p>2026-06-27 → 2026-07-03 &nbsp;·&nbsp; YouTube Kids Channel Analytics</p>
+    <p style="margin-top:8px;font-size:13px">Tổng subscriber kênh: <b>5,432</b></p>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="kpi-val">24,830</div>
+      <div class="kpi-lbl">Tổng lượt xem</div>
+      <div class="kpi-sub">tuần này</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val">+1,243</div>
+      <div class="kpi-lbl">Subscriber mới</div>
+      <div class="kpi-sub">+1,302 / -59</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val">887</div>
+      <div class="kpi-lbl">Views/video TB</div>
+      <div class="kpi-sub">28 video đăng</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val">148,200</div>
+      <div class="kpi-lbl">Phút xem (Watch time)</div>
+      <div class="kpi-sub">≈ 2,470 giờ</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val">3.59%</div>
+      <div class="kpi-lbl">Like/View ratio</div>
+      <div class="kpi-sub">892 lượt like</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val">3:05</div>
+      <div class="kpi-lbl">Avg watch time</div>
+      <div class="kpi-sub">trung bình/video</div>
+    </div>
+  </div>
+
+  <div class="card"><h2>📈 Views & Subscribers theo ngày</h2><div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div class="chart-wrap"><canvas id="viewChart"></canvas></div><div class="chart-wrap"><canvas id="subChart"></canvas></div></div></div>
+
+  <div class="card">
+    <h2>🏆 Top 10 Video tuần này</h2>
+    <div style="overflow-x:auto">
+    <table>
+      <thead><tr><th>#</th><th>Tiêu đề</th><th style="text-align:right">Views</th><th style="text-align:right">Likes</th><th style="text-align:right">Comments</th><th style="text-align:right">Like%</th><th style="text-align:center">Ngày đăng</th></tr></thead>
+      <tbody>
+        <tr>
+          <td style="text-align:center;font-weight:500">🥇</td>
+          <td style="max-width:300px;font-size:13px">[Mock] Video #1 — Chủ đề tuần 1</td>
+          <td style="text-align:right">3,000</td>
+          <td style="text-align:right">120</td>
+          <td style="text-align:right">30</td>
+          <td style="text-align:right">4.0%</td>
+          <td style="text-align:center;font-size:12px">2026-06-27</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:500">🥈</td>
+          <td style="max-width:300px;font-size:13px">[Mock] Video #2 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,910</td>
+          <td style="text-align:right">116</td>
+          <td style="text-align:right">29</td>
+          <td style="text-align:right">4.0%</td>
+          <td style="text-align:center;font-size:12px">2026-06-28</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:500">🥉</td>
+          <td style="max-width:300px;font-size:13px">[Mock] Video #3 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,820</td>
+          <td style="text-align:right">112</td>
+          <td style="text-align:right">28</td>
+          <td style="text-align:right">4.0%</td>
+          <td style="text-align:center;font-size:12px">2026-06-29</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:500">#4</td>
+          <td style="max-width:300px;font-size:13px">[Mock] Video #4 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,730</td>
+          <td style="text-align:right">108</td>
+          <td style="text-align:right">27</td>
+          <td style="text-align:right">4.0%</td>
+          <td style="text-align:center;font-size:12px">2026-06-30</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:500">#5</td>
+          <td style="max-width:300px;font-size:13px">[Mock] Video #5 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,640</td>
+          <td style="text-align:right">104</td>
+          <td style="text-align:right">26</td>
+          <td style="text-align:right">3.9%</td>
+          <td style="text-align:center;font-size:12px">2026-07-01</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:500">#6</td>
+          <td style="max-width:300px;font-size:13px">[Mock] Video #6 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,550</td>
+          <td style="text-align:right">100</td>
+          <td style="text-align:right">25</td>
+          <td style="text-align:right">3.9%</td>
+          <td style="text-align:center;font-size:12px">2026-07-02</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:500">#7</td>
+          <td style="max-width:300px;font-size:13px">[Mock] Video #7 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,460</td>
+          <td style="text-align:right">96</td>
+          <td style="text-align:right">24</td>
+          <td style="text-align:right">3.9%</td>
+          <td style="text-align:center;font-size:12px">2026-07-03</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:500">#8</td>
+          <td style="max-width:300px;font-size:13px">[Mock] Video #8 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,370</td>
+          <td style="text-align:right">92</td>
+          <td style="text-align:right">23</td>
+          <td style="text-align:right">3.9%</td>
+          <td style="text-align:center;font-size:12px">2026-06-27</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:500">#9</td>
+          <td style="max-width:300px;font-size:13px">[Mock] Video #9 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,280</td>
+          <td style="text-align:right">88</td>
+          <td style="text-align:right">22</td>
+          <td style="text-align:right">3.9%</td>
+          <td style="text-align:center;font-size:12px">2026-06-28</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;font-weight:500">#10</td>
+          <td style="max-width:300px;font-size:13px">[Mock] Video #10 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,190</td>
+          <td style="text-align:right">84</td>
+          <td style="text-align:right">21</td>
+          <td style="text-align:right">3.8%</td>
+          <td style="text-align:center;font-size:12px">2026-06-29</td>
+        </tr></tbody>
+    </table>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.2rem">
+    <div class="card">
+      <h2>💡 Nhận xét tự động</h2>
+      <ul class="insight-list"><li style="padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:14px">📈 Views/video ở mức trung bình. Thử cải thiện thumbnail và 5 giây đầu video.</li><li style="padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:14px">✅ Tỷ lệ Like/View tốt — nội dung đang được khán giả yêu thích.</li><li style="padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:14px">🚀 Subscriber tăng mạnh! Duy trì lịch đăng đều đặn.</li><li style="padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:14px">⏱️ Watch time xuất sắc! YouTube algorithm đang ưu tiên kênh của bạn.</li></ul>
+    </div>
+    <div class="card">
+      <h2>🎯 Hành động tuần tới</h2>
+      <ul style="padding-left:16px;line-height:1.8"><li style="padding:5px 0;font-size:13px;color:#374151">Làm thêm video tương tự '[Mock] Video #1 — Chủ đề tuần 1…' — video này đang dẫn đầu tuần</li><li style="padding:5px 0;font-size:13px;color:#374151">Tạo compilation 1 giờ từ top 5 video tuần này — dễ đạt high watch time</li><li style="padding:5px 0;font-size:13px;color:#374151">A/B test thumbnail: làm 2 phiên bản khác nhau cho cùng 1 chủ đề rồi so sánh CTR</li><li style="padding:5px 0;font-size:13px;color:#374151">Đăng Shorts 60s trích từ highlight video có views cao nhất → kéo traffic từ TikTok/Reels</li><li style="padding:5px 0;font-size:13px;color:#374151">Check từ khóa trending trên YouTube Kids tuần này bằng TubeBuddy → tích hợp vào title tuần tới</li></ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📋 Tất cả video tuần 1</h2>
+    <div style="overflow-x:auto">
+    <table>
+      <thead><tr><th>Tiêu đề</th><th style="text-align:right">Views</th><th style="text-align:right">Likes</th><th style="text-align:center">Ngày đăng</th><th>Link</th></tr></thead>
+      <tbody>
+        <tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #1 — Chủ đề tuần 1</td>
+          <td style="text-align:right">3,000</td>
+          <td style="text-align:right">120</td>
+          <td style="text-align:center;font-size:12px">2026-06-27</td>
+          <td><a href="https://youtu.be/mock_000" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #2 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,910</td>
+          <td style="text-align:right">116</td>
+          <td style="text-align:center;font-size:12px">2026-06-28</td>
+          <td><a href="https://youtu.be/mock_001" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #3 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,820</td>
+          <td style="text-align:right">112</td>
+          <td style="text-align:center;font-size:12px">2026-06-29</td>
+          <td><a href="https://youtu.be/mock_002" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #4 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,730</td>
+          <td style="text-align:right">108</td>
+          <td style="text-align:center;font-size:12px">2026-06-30</td>
+          <td><a href="https://youtu.be/mock_003" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #5 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,640</td>
+          <td style="text-align:right">104</td>
+          <td style="text-align:center;font-size:12px">2026-07-01</td>
+          <td><a href="https://youtu.be/mock_004" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #6 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,550</td>
+          <td style="text-align:right">100</td>
+          <td style="text-align:center;font-size:12px">2026-07-02</td>
+          <td><a href="https://youtu.be/mock_005" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #7 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,460</td>
+          <td style="text-align:right">96</td>
+          <td style="text-align:center;font-size:12px">2026-07-03</td>
+          <td><a href="https://youtu.be/mock_006" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #8 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,370</td>
+          <td style="text-align:right">92</td>
+          <td style="text-align:center;font-size:12px">2026-06-27</td>
+          <td><a href="https://youtu.be/mock_007" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #9 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,280</td>
+          <td style="text-align:right">88</td>
+          <td style="text-align:center;font-size:12px">2026-06-28</td>
+          <td><a href="https://youtu.be/mock_008" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #10 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,190</td>
+          <td style="text-align:right">84</td>
+          <td style="text-align:center;font-size:12px">2026-06-29</td>
+          <td><a href="https://youtu.be/mock_009" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #11 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,100</td>
+          <td style="text-align:right">80</td>
+          <td style="text-align:center;font-size:12px">2026-06-30</td>
+          <td><a href="https://youtu.be/mock_010" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #12 — Chủ đề tuần 1</td>
+          <td style="text-align:right">2,010</td>
+          <td style="text-align:right">76</td>
+          <td style="text-align:center;font-size:12px">2026-07-01</td>
+          <td><a href="https://youtu.be/mock_011" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #13 — Chủ đề tuần 1</td>
+          <td style="text-align:right">1,920</td>
+          <td style="text-align:right">72</td>
+          <td style="text-align:center;font-size:12px">2026-07-02</td>
+          <td><a href="https://youtu.be/mock_012" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #14 — Chủ đề tuần 1</td>
+          <td style="text-align:right">1,830</td>
+          <td style="text-align:right">68</td>
+          <td style="text-align:center;font-size:12px">2026-07-03</td>
+          <td><a href="https://youtu.be/mock_013" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #15 — Chủ đề tuần 1</td>
+          <td style="text-align:right">1,740</td>
+          <td style="text-align:right">64</td>
+          <td style="text-align:center;font-size:12px">2026-06-27</td>
+          <td><a href="https://youtu.be/mock_014" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #16 — Chủ đề tuần 1</td>
+          <td style="text-align:right">1,650</td>
+          <td style="text-align:right">60</td>
+          <td style="text-align:center;font-size:12px">2026-06-28</td>
+          <td><a href="https://youtu.be/mock_015" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #17 — Chủ đề tuần 1</td>
+          <td style="text-align:right">1,560</td>
+          <td style="text-align:right">56</td>
+          <td style="text-align:center;font-size:12px">2026-06-29</td>
+          <td><a href="https://youtu.be/mock_016" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #18 — Chủ đề tuần 1</td>
+          <td style="text-align:right">1,470</td>
+          <td style="text-align:right">52</td>
+          <td style="text-align:center;font-size:12px">2026-06-30</td>
+          <td><a href="https://youtu.be/mock_017" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #19 — Chủ đề tuần 1</td>
+          <td style="text-align:right">1,380</td>
+          <td style="text-align:right">48</td>
+          <td style="text-align:center;font-size:12px">2026-07-01</td>
+          <td><a href="https://youtu.be/mock_018" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #20 — Chủ đề tuần 1</td>
+          <td style="text-align:right">1,290</td>
+          <td style="text-align:right">44</td>
+          <td style="text-align:center;font-size:12px">2026-07-02</td>
+          <td><a href="https://youtu.be/mock_019" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #21 — Chủ đề tuần 1</td>
+          <td style="text-align:right">1,200</td>
+          <td style="text-align:right">40</td>
+          <td style="text-align:center;font-size:12px">2026-07-03</td>
+          <td><a href="https://youtu.be/mock_020" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #22 — Chủ đề tuần 1</td>
+          <td style="text-align:right">1,110</td>
+          <td style="text-align:right">36</td>
+          <td style="text-align:center;font-size:12px">2026-06-27</td>
+          <td><a href="https://youtu.be/mock_021" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #23 — Chủ đề tuần 1</td>
+          <td style="text-align:right">1,020</td>
+          <td style="text-align:right">32</td>
+          <td style="text-align:center;font-size:12px">2026-06-28</td>
+          <td><a href="https://youtu.be/mock_022" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #24 — Chủ đề tuần 1</td>
+          <td style="text-align:right">930</td>
+          <td style="text-align:right">28</td>
+          <td style="text-align:center;font-size:12px">2026-06-29</td>
+          <td><a href="https://youtu.be/mock_023" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #25 — Chủ đề tuần 1</td>
+          <td style="text-align:right">840</td>
+          <td style="text-align:right">24</td>
+          <td style="text-align:center;font-size:12px">2026-06-30</td>
+          <td><a href="https://youtu.be/mock_024" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #26 — Chủ đề tuần 1</td>
+          <td style="text-align:right">750</td>
+          <td style="text-align:right">20</td>
+          <td style="text-align:center;font-size:12px">2026-07-01</td>
+          <td><a href="https://youtu.be/mock_025" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #27 — Chủ đề tuần 1</td>
+          <td style="text-align:right">660</td>
+          <td style="text-align:right">16</td>
+          <td style="text-align:center;font-size:12px">2026-07-02</td>
+          <td><a href="https://youtu.be/mock_026" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr><tr>
+          <td style="max-width:280px;font-size:12px">[Mock] Video #28 — Chủ đề tuần 1</td>
+          <td style="text-align:right">570</td>
+          <td style="text-align:right">12</td>
+          <td style="text-align:center;font-size:12px">2026-07-03</td>
+          <td><a href="https://youtu.be/mock_027" target="_blank" style="color:#6366f1;font-size:12px">▶ Xem</a></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    Báo cáo tạo tự động lúc 27/06/2026 19:24 (GMT+7)
+    &nbsp;·&nbsp; YouTube Kids Channel Analytics System
+  </div>
+
+</div>
+
+<script>const vCtx=document.getElementById("viewChart");new Chart(vCtx,{type:"bar",data:{labels:["2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03"],datasets:[{label:"Views",data:[2800, 3200, 3600, 4000, 4400, 4800, 5200],backgroundColor:"#818cf8",borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:10}}},y:{ticks:{font:{size:10}}}}}});const sCtx=document.getElementById("subChart");new Chart(sCtx,{type:"line",data:{labels:["2026-06-27", "2026-06-28", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03"],datasets:[{label:"Subs mới",data:[160, 180, 200, 220, 240, 260, 280],borderColor:"#10b981",backgroundColor:"rgba(16,185,129,.1)",fill:true,tension:.4,pointRadius:3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:10}}},y:{ticks:{font:{size:10}}}}}});</script>
+
+</body>
+</html>
