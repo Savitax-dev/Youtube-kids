@@ -229,10 +229,11 @@ jobs:
         if: always()
         run: |
           echo "============================================"
-          echo "✅ Upload hoàn tất cho slot: ${{ steps.slot.outputs.slot }}"
-          echo "   Ngày: $(date '+%d/%m/%Y %H:%M') (UTC)"
-          echo "   Run: ${{ github.run_number }}"
+          echo "Upload hoan tat cho slot: ${{ steps.slot.outputs.slot }}"
+          echo "Ngay: $(date '+%d/%m/%Y %H:%M') (UTC)"
+          echo "Run: ${{ github.run_number }}"
           if [ -f upload_history.json ]; then
-            echo "   Tổng video đã đăng: $(python3 -c "import json; d=json.load(open('upload_history.json')); print(len(d))")"
+            COUNT=$(python3 -c 'import json; d=json.load(open("upload_history.json")); print(len(d))')
+            echo "Tong video da dang: $COUNT"
           fi
-          echo "=======================
+          echo "=====================
