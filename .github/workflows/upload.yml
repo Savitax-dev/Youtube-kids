@@ -60,7 +60,8 @@ jobs:
             google-auth-oauthlib \
             gdown \
             pytz \
-            Pillow
+            Pillow \
+            schedule
 
       # ── 4. Khôi phục token OAuth từ Secret ───────────────────
       - name: Restore YouTube OAuth token
@@ -234,4 +235,4 @@ jobs:
           if [ -f upload_history.json ]; then
             echo "   Tổng video đã đăng: $(python3 -c "import json; d=json.load(open('upload_history.json')); print(len(d))")"
           fi
-          echo "============================================"
+          echo "=======================
